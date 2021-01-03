@@ -1,5 +1,6 @@
-const KEY = '?client_id=rXxgygkf6eMJJ6ZpAFyOpW65n_hnd5WfopTjeXOYGr4';
-const URL = `https://api.unsplash.com/photos/`;
+const tokenKey = process.env.REACT_APP_API_AUTH;
+const KEY = `?client_id=${tokenKey}`;
+const URL = `${process.env.REACT_APP_API_URL}`;
 
 const fetchImages = async (page) => {
   const response = await fetch(`${URL}${KEY}&per_page=3&page=${page}`);
